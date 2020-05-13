@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DummydataService } from '../service/dummydata.service';
 import { Appointment } from '../model/appointment';
 import { Center } from '../model/center';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-approve-appointment',
@@ -11,12 +12,9 @@ import { Center } from '../model/center';
 export class ApproveAppointmentComponent implements OnInit {
 
   service:DummydataService;
-  appointments:Array<Appointment>=[];
   centers:Array<Center>=[];
-  showappointments:Array<Appointment>=[];
-  flag:boolean = false;
 
-  constructor(service:DummydataService) {
+  constructor(service:DummydataService, private router:Router) {
       this.service = service;
    }
 
@@ -25,28 +23,7 @@ export class ApproveAppointmentComponent implements OnInit {
   }
 
   getAppointments(event){
-    console.log(this.service.fetchAppointments()+"**");
-    console.log(this.service.fetchAppointments());
-    this.appointments = this.service.fetchAppointments();
-    let centerId = event.target.value;
-    this.appointments.forEach(a => {
-      console.log(a.center.id+"  "+centerId);
-      if(a.center.id == centerId && a.status == false)
-      {
-        this.showappointments.push(a);
-        this.flag =true;
-      }
-    });
-  }
-
-  approve(Id){
-    let id = Id.value;
-    this.appointments.forEach(a => {
-      if(a.id == id)
-      {
-        a.status = true;
-      }
-    });
+    this.router.navigate(['approveappointment/details',event.target.value]);
   }
 
 }

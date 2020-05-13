@@ -8,13 +8,15 @@ import { DummydataService } from './service/dummydata.service';
 import { MakeAppointmentComponent } from './make-appointment/make-appointment.component';
 import { ApproveAppointmentComponent } from './approve-appointment/approve-appointment.component';
 import { UserAppointmentComponent } from './user-appointment/user-appointment.component';
+import { AppointmentDetailsComponent } from './appointment-details/appointment-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MakeAppointmentComponent,
     ApproveAppointmentComponent,
-    UserAppointmentComponent
+    UserAppointmentComponent,
+    AppointmentDetailsComponent
   ],
   imports: [
     BrowserModule,
