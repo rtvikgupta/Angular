@@ -18,6 +18,7 @@ export class MakeAppointmentComponent implements OnInit {
   test : Test;
   dateTime:Date = new Date();
   id:number = 0;
+  min:String;
 
   constructor(service:DummydataService) {
         this.service = service;
@@ -53,4 +54,24 @@ export class MakeAppointmentComponent implements OnInit {
     console.log(this.service.fetchAppointments());
   }
 
+  getMin(){
+    let todayDate = new Date();
+    let d = todayDate.getDate();
+    let m = todayDate.getMonth()+1;
+    let year = todayDate.getFullYear();
+    let date;
+    let month;
+    if(m<10)
+      month = "0"+m;
+    else
+      month = m;
+    if(d<10)
+      date = "0"+d;
+    else
+      date = d;
+    this.min = year+"-"+month+"-"+date+"T00:00:00";
+    
+    console.log(this.min);
+    
+  }
 }
