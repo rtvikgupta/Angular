@@ -1,22 +1,25 @@
-<p>make-appointment works!</p>
-<form>
+<h1>Make Appointment</h1>
+<form #form="ngForm" name="form" (ngSubmit)="makeAppointment(form)">
 
-<select (click)="getTest($event)">
-    <option value="0">--Select Center--</option>
-    <option *ngFor = "let c of centers" value={{c.id}}>{{c.name}}</option>
-</select>
+<div class="form-group">
+    <label>Select Center</label>
+    <select (click)="getTest($event)" class="custom-select" name="center" ngModel>
+        <option *ngFor = "let c of centers" value={{c.id}}>{{c.name}}</option>
+    </select>
+</div>
 
-<br>
-<hr/>
-<br>
+<div class="form-group">
+    <label>Select Test</label>
+    <select name="test" ngModel>
+        <option *ngFor = "let t of tests" value={{t.id}}>{{t.name}}</option>
+    </select>
+</div>
 
-<select>
-    <option value="0">--Select Test--</option>
-    <option *ngFor = "let t of tests" value={{t.id}}>{{t.name}}</option>
-</select>
+<div class="form-group">
+    <label>Choose date and time:</label>
+    <input type="datetime-local" required name="dateTime" ngModel>
+</div>
 
-<input type="datetime-local" required>
-
-<input type="submit" value="Submit">
+<button class="btn btn-primary" type="submit">Confirm Appointment</button>
 
 </form>

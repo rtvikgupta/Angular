@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Center } from '../model/center';
 import { Test } from '../model/test';
+import { Appointment } from '../model/appointment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DummydataService {
   centers: Array<Center> = [];
+  appointments:Array<Appointment> = [];
 
   constructor() {
     let center1 = new Center("101","Vedanta",[new Test("1011","Bp"),new Test("1012","Sugar"),new Test("1013","Blood")]);
@@ -21,5 +23,17 @@ export class DummydataService {
   {
     return this.centers;
   }
+
+  addAppointment(appointment:Appointment)
+  {
+    this.appointments.push(appointment);
+  }
+
+  fetchAppointments()
+  {
+    return this.appointments;
+  }
+
+
   
 }

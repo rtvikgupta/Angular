@@ -1,19 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DummydataService } from './service/dummydata.service';
 import { MakeAppointmentComponent } from './make-appointment/make-appointment.component';
+import { ApproveAppointmentComponent } from './approve-appointment/approve-appointment.component';
+import { UserAppointmentComponent } from './user-appointment/user-appointment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MakeAppointmentComponent
+    MakeAppointmentComponent,
+    ApproveAppointmentComponent,
+    UserAppointmentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [DummydataService],
   bootstrap: [AppComponent]
