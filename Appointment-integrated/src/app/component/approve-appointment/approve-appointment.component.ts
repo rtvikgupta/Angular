@@ -52,7 +52,7 @@ export class ApproveAppointmentComponent implements OnInit {
 
   approve(form){
     let details = form.value;
-    let id = details.id;
+    
     let result:Observable<RequestAppointment>=this.service.approveAppointment(this.appointmentId);
     result.subscribe(a => {
       this.app = a;
