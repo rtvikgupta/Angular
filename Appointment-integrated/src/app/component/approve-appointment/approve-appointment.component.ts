@@ -39,26 +39,26 @@ export class ApproveAppointmentComponent implements OnInit {
     );
   }
 
-  // approve(Id){
-  //   let id = Id.value;
-  //   console.log(id);
-  //   let result:Observable<RequestAppointment>=this.service.approveAppointment(id);
-  //   result.subscribe(a => {
-  //     this.app = a;
-  //   },
-  //   err=>console.log(err)
-  //   );
-  // }
-
-  approve(form){
-    let details = form.value;
-    
-    let result:Observable<RequestAppointment>=this.service.approveAppointment(this.appointmentId);
+  approve(Id){
+    let id = Id.value;
+    console.log(id);
+    let result:Observable<RequestAppointment>=this.service.approveAppointment(id);
     result.subscribe(a => {
       this.app = a;
     },
     err=>console.log(err)
     );
   }
+
+  // approve(form){
+  //   let details = form.value;
+    
+  //   let result:Observable<RequestAppointment>=this.service.approveAppointment(this.appointmentId);
+  //   result.subscribe(a => {
+  //     this.app = a;
+  //   },
+  //   err=>console.log(err)
+  //   );
+  // }
 
 }
