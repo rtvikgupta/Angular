@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Approve Appointment</h2>
     
-    <form class="form-horizontal" #form="ngForm" (ngSubmit)="form.valid && approve(form)"></form>
+    <form class="form-horizontal" #form="ngForm" (ngSubmit)="form.valid && approve(form)">
   
     <div class="form-group">
     <label class="control-label col-sm-2">Select Center</label>
@@ -10,6 +10,7 @@
     </select>
     </div>
     
+    <div class="form-group">
     <table class="table">
         <thead>
         <tr>
@@ -25,9 +26,11 @@
             <td>{{a.userId}}</td>
             <td>{{a.testId}}</td>
             <td>{{a.dateTime}}</td>
-            <td> <button class="btn btn-primary" #id="ngModel" name="id" type="submit" value={{a.appointmentId}} ngModel>Approve</button></td>
+            <td> <button class="btn btn-primary" type="submit">Approve</button></td>
             <!-- <td><input type="submit" (click)="approve(id)" value="Approve"></td>
             <td><input type="hidden" #id value={{a.appointmentId}}></td> -->
         </tr>
     </table>
+    </div>
+    </form>
 </div>
