@@ -16,7 +16,7 @@ export class ApproveAppointmentComponent implements OnInit {
   dummyService:DummyDataService;
   centers:Array<Center>=[];
   showappointments:Array<RequestAppointment>=[];
-  app:RequestAppointment;
+  appStatus:boolean;
   centerId:String;
   appointmentId:String;
 
@@ -42,9 +42,9 @@ export class ApproveAppointmentComponent implements OnInit {
   approve(Id){
     let id = Id.value;
     console.log(id);
-    let result:Observable<RequestAppointment>=this.service.approveAppointment(id);
+    let result:Observable<boolean>=this.service.approveAppointment(id);
     result.subscribe(a => {
-      this.app = a;
+      this.appStatus = a;
     },
     err=>console.log(err)
     );
@@ -53,9 +53,9 @@ export class ApproveAppointmentComponent implements OnInit {
   // approve(form){
   //   let details = form.value;
     
-  //   let result:Observable<RequestAppointment>=this.service.approveAppointment(this.appointmentId);
+  //   let result:Observable<boolean>=this.service.approveAppointment(this.appointmentId);
   //   result.subscribe(a => {
-  //     this.app = a;
+  //     this.appStatus = a;
   //   },
   //   err=>console.log(err)
   //   );

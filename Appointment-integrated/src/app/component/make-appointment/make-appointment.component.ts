@@ -18,7 +18,7 @@ export class MakeAppointmentComponent implements OnInit {
   centers:Array<Center>=[];
   tests:Array<Test>=[];
   min:String;
-  app:ResponseAppointment;
+  appId:string;
   centerId:String;
 
   constructor(service:AppointmentService,dummyService:DummyDataService) {
@@ -46,9 +46,9 @@ export class MakeAppointmentComponent implements OnInit {
     let date = details.dateTime;
     let datetime = this.getDateTime(date);
     let a = new ResponseAppointment(datetime,"1011",centerId,testId);
-    let result:Observable<ResponseAppointment>=this.service.addAppointment(a);
+    let result:Observable<string>=this.service.addAppointment(a);
     result.subscribe(a => {
-      this.app = a;
+      this.appId = a;
     },
     err=>console.log(err)
     );
