@@ -66,7 +66,7 @@ export class HealthcareService {
     return result;
   }
 
-  //Appointment Module4
+  //Appointment Module
 
   /**
    * fires post request to server with appointment as body

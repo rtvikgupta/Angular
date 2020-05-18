@@ -1,5 +1,5 @@
 <div class="container">
-<h2>Add Test</h2> 
+<h3>Add Test</h3> 
 <form class="form-horizontal" #form="ngForm" name="form" (ngSubmit)="addTest(form)">
 
     <table><div class="table-class">
@@ -22,7 +22,8 @@
 </table>
     </form>
     
-    <div *ngIf="success"><h2>Totall tests in centerId={{foundCenter.centerId}} are----------------</h2>
+    <br>
+    <div *ngIf="success"><h3 style="color: green;">Totall tests in centerId={{foundCenter.centerId}} are----------------</h3>
      <div *ngFor="let t1 of testArray">
         {{"Test Name "+t1.testName}}
         {{"Test Id " +t1.testName}}

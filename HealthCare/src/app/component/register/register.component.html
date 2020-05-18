@@ -12,10 +12,10 @@
                         <div *ngIf="name.invalid && (name.dirty || name.touched)" class="myerror">
                             <div *ngIf="name.invalid == true">
                                 <div *ngIf="name.errors.required">
-                                    <span style="color: red;">Name is required!!!</span>
+                                    <h3 style="color: red;">Name is required!!!</h3>
                                 </div>
                                 <div *ngIf="name.errors.pattern">
-                                    <span style="color: red;">First Letter of name should be capital!!!</span>
+                                    <h3 style="color: red;">First Letter of name should be capital!!!</h3>
                                 </div>
                             </div>
                         </div>
@@ -34,10 +34,10 @@
                         <div *ngIf="password.invalid && (password.dirty || password.touched)" class="myerror">
                             <div *ngIf="password.invalid == true">
                                 <div *ngIf="password.errors.required">
-                                    <span style="color: red;">Password is required!!!</span>
+                                    <h3 style="color: red;">Password is required!!!</h3>
                                 </div>
                                 <div *ngIf="password.errors.pattern">
-                                    <span style="color: red;">Password should contain one number, one alphabet, one special character and length should be 8-14</span>
+                                    <h3 style="color: red;">Password should contain one number, one alphabet, one special character and length should be 8-14</h3>
                                 </div>
                             </div>
                         </div>
@@ -55,10 +55,10 @@
                         <div *ngIf="email.invalid && (email.dirty || email.touched)" class="myerror">
                             <div *ngIf="email.invalid == true">
                                 <div *ngIf="email.errors.required">
-                                    <span style="color: red;">Email id is required!!!</span>
+                                    <h3 style="color: red;">Email id is required!!!</h3>
                                   </div>
                                   <div *ngIf="email.errors.pattern">
-                                    <span style="color: red;">Enter a valid email Id!!!</span>   
+                                    <h3 style="color: red;">Enter a valid email Id!!!</h3>   
                                   </div>
                             </div>
                         </div>
@@ -77,10 +77,10 @@
                         <div *ngIf="contact.invalid && (contact.dirty || contact.touched)" class="myerror">
                             <div *ngIf="contact.invalid == true">
                                 <div *ngIf="contact.errors.required">
-                                    <span style="color: red;">Contact Number is required!!!</span>
+                                    <h3 style="color: red;">Contact Number is required!!!</h3>
                                   </div>
                                   <div *ngIf="contact.errors.pattern">
-                                    <span style="color: red;">Enter a valid Contact number!!!</span>
+                                    <h3 style="color: red;">Enter a valid Contact number!!!</h3>
                                   </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                         <div *ngIf="age .invalid && (age .dirty || age .touched)" class="myerror">
                             <div *ngIf="age .invalid == true">
                                 <div *ngIf="age .errors.required">
-                                    <span style="color: red;">Age is required!!!</span>
+                                    <h3 style="color: red;">Age is required!!!</h3>
                                   </div>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                     <td><input #gender="ngModel" type="radio" class="form-control" name="gender" value="Female" required ngModel >Female</td>
                     <td>
                         <div *ngIf="gender.invalid">
-                            <span style="color: red;">Gender is required!!!</span>
+                            <h3 style="color: red;">Gender is required!!!</h3>
                         </div>
                     </td>
                 </tr>
@@ -123,8 +123,9 @@
         <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-primary">Submit</button>
       </form>
 </div>
-
+<br>
 <div *ngIf="flag">
+    <h3 style="color: green;">Registered Successfully!!</h3>
     User id: {{viewuser.userId}}<br>
     User name: {{viewuser.userName}}<br>
     Email-id: {{viewuser.userEmail}}<br>

@@ -18,14 +18,15 @@ export class AddcenterComponent implements OnInit {
     this.service = service;
    }
 
-   added=null;
-   dc=null;
+   added=false;
+   dc=false;
 
   ngOnInit(): void {
   }
 
  addCenter(form:any) {
-   
+   this.added = false;
+   this.dc = false;
     let data=form.value;
     let name=data.centerName;
     let cAddress=data.centerAddress;
@@ -44,7 +45,6 @@ export class AddcenterComponent implements OnInit {
      this.dc=true;
 
      },err=>{
-
        this.added = true;
       console.log(err);
       

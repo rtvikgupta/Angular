@@ -18,6 +18,7 @@ export class TakeappointmentComponent implements OnInit {
   min:String;
   appId:string;
   centerId:string;
+  flag:boolean = false;
 
   constructor(service:HealthcareService) {
         this.service = service;
@@ -51,6 +52,7 @@ export class TakeappointmentComponent implements OnInit {
     let result:Observable<string>=this.service.addAppointment(a);
     result.subscribe(a => {
       this.appId = a;
+      this.flag = true;
     },
     err=>console.log(err)
     );

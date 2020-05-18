@@ -1,5 +1,5 @@
 <div class="container">
-<h2>Remove Center</h2> 
+<h3>Remove Center</h3> 
 <form #form="ngForm" name="form" (ngSubmit)="removeCenter(form)">
 
     <table><div class="table-class">
@@ -16,7 +16,8 @@
 </table>
     </form>
 
-    <div *ngIf="removed"><h2>Deleted Center-------------------------------------------------------</h2>
+    <br>
+    <div *ngIf="removed"><h3 style="color: green;">Deleted Center-------------------------------------------------------</h3>
         {{"centerId id "+foundCenter.centerId}}
         {{"centerName is "+foundCenter.centerName}}<br>
         {{"centerAddress is "+foundCenter.address}}<br>
@@ -25,9 +26,6 @@
            testId is {{t.testId}}
            testName is {{t.testName}}
         </div>
-
-
-
     </div>
   
   <div *ngIf="dc">

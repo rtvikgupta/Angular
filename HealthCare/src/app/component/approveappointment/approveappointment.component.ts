@@ -17,6 +17,7 @@ export class ApproveappointmentComponent implements OnInit {
   appStatus:boolean;
   centerId:string;
   appointmentId:string;
+  flag:boolean = false;
 
   constructor(service:HealthcareService) {
       this.service = service;
@@ -32,12 +33,18 @@ export class ApproveappointmentComponent implements OnInit {
   }
 
   getAppointments(){
+    this.flag = false;
     this.showappointments=[];
     let result:Observable<Responseappointment[]>=this.service.fetchAppointmentsByCenter(this.centerId);
     result.subscribe(a => {
       this.showappointments = a;
     },
-    err=>console.log(err)
+    err=>
+    {
+      console.log(err);
+      if(this.showappointments.length === 0)
+        this.flag = true;
+    }
     );
   }
 

@@ -13,7 +13,7 @@ export class RemovetestComponent implements OnInit {
   center:Diagnosticcenter;
   removed:boolean;
  
-  dc=null;
+  dc=false;
   constructor(serviceObj:HealthcareService) {
   this.serviceObj=serviceObj;
    }
