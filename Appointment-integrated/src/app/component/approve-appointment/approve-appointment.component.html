@@ -26,11 +26,13 @@
             <td>{{a.userId}}</td>
             <td>{{a.testId}}</td>
             <td>{{a.dateTime}}</td>
-            <!-- <td> <button class="btn btn-primary" type="submit">Approve</button></td> -->
             <td><input type="submit" (click)="approve(id)" value="Approve"></td>
             <td><input type="hidden" #id value={{a.appointmentId}}></td>
         </tr>
     </table>
+    <div *ngIf = "flag">
+        <h3 style="color: green;">No Appointments Pending!!!</h3>
+    </div>
     </div>
     </form>
 </div>
